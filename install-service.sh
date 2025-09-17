@@ -14,8 +14,9 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   sudo systemctl enable --now turing.service
 
   echo "✅ Linux 下已安装并启动 systemd 服务：turing"
-  echo "   查看日志：journalctl -u turing -f"
-  echo "   停止服务：sudo systemctl stop turing"
+  echo "   查询状态：systemctl status turing"
+  echo "   停止服务：systemctl stop turing"
+  echo "   重启服务：systemctl restart turing"
 
 else
   echo "⚠️ 不支持的操作系统：$OSTYPE"
