@@ -1,0 +1,272 @@
+---
+# This theme is using moreperfect-vga/MorePerfectDOSVGA.ttf font. 
+# You can download it here: https://laemeur.sdf.org/fonts/
+# Place moreperfect-vga/MorePerfectDOSVGA.ttf file in 'turing-smart-screen-python-3.5.0\res\fonts' folder.
+author: "Subdue0"
+
+display:
+  DISPLAY_SIZE: 3.5"
+  DISPLAY_ORIENTATION: portrait
+  DISPLAY_RGB_LED: 0, 0, 0
+
+static_images:
+  BACKGROUND:
+    PATH: background.png
+    X: 0
+    Y: 0
+    WIDTH: 320
+    HEIGHT: 480
+
+static_text:
+  TEXT_CPU:
+    TEXT: CPU
+    X: 3
+    Y: 3
+    FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+    FONT_SIZE: 25
+    FONT_COLOR: 30, 255, 50
+    BACKGROUND_IMAGE: background.png
+
+  TEXT_GPU:
+    TEXT: GPU
+    X: 3
+    Y: 118
+    FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+    FONT_SIZE: 25
+    FONT_COLOR: 30, 255, 50
+    BACKGROUND_IMAGE: background.png
+
+  TEXT_GPU_RAM/:
+    TEXT: /
+    X: 127
+    Y: 120
+    FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+    FONT_SIZE: 25
+    FONT_COLOR: 30, 255, 50
+    BACKGROUND_IMAGE: background.png
+
+  TEXT_RAM:
+    TEXT: RAM
+    X: 3
+    Y: 224
+    FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+    FONT_SIZE: 25
+    FONT_COLOR: 30, 255, 50
+    BACKGROUND_IMAGE: background.png
+
+  TEXT_RAM/:
+    TEXT: /
+    X: 190
+    Y: 226
+    FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+    FONT_SIZE: 25
+    FONT_COLOR: 30, 255, 50
+    BACKGROUND_IMAGE: background.png
+
+  TEXT_DOWN:
+    TEXT: DOWNLOAD
+    X: 3
+    Y: 284
+    FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+    FONT_SIZE: 25
+    FONT_COLOR: 30, 255, 50
+    BACKGROUND_IMAGE: background.png
+
+  TEXT_UP:
+    TEXT: UPLOAD
+    X: 3
+    Y: 385
+    FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+    FONT_SIZE: 25
+    FONT_COLOR: 30, 255, 50
+    BACKGROUND_IMAGE: background.png
+
+STATS:
+  CPU:
+    PERCENTAGE:
+      INTERVAL: 3
+      LINE_GRAPH:
+        SHOW: true
+        X: 3
+        Y: 31
+        WIDTH: 314
+        HEIGHT: 75
+        MIN_VALUE: 0
+        MAX_VALUE: 100
+        HISTORY_SIZE: 60
+        AUTOSCALE: false
+        LINE_COLOR: 30, 255, 50
+        AXIS: true
+        AXIS_COLOR: 30, 255, 50
+        BACKGROUND_IMAGE: background.png
+    FREQUENCY:
+      INTERVAL: 5
+      TEXT:
+        SHOW: true
+        SHOW_UNIT: true
+        X: 99
+        Y: 3
+        FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+        FONT_SIZE: 25
+        FONT_COLOR: 30, 255, 50
+        BACKGROUND_IMAGE: background.png
+    TEMPERATURE:
+      INTERVAL: 5
+      TEXT:
+        SHOW: true
+        SHOW_UNIT: true
+        X: 238
+        Y: 3
+        FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+        FONT_SIZE: 25
+        FONT_COLOR: 30, 255, 50
+        BACKGROUND_IMAGE: background.png
+
+  GPU:
+    INTERVAL: 3
+    PERCENTAGE:
+      LINE_GRAPH:
+        SHOW: true
+        X: 3
+        Y: 139
+        WIDTH: 314
+        HEIGHT: 75
+        MIN_VALUE: 0
+        MAX_VALUE: 100
+        HISTORY_SIZE: 60
+        AUTOSCALE: false
+        LINE_COLOR: 30, 255, 50
+        AXIS: true
+        AXIS_COLOR: 30, 255, 50
+        BACKGROUND_IMAGE: background.png
+    MEMORY_USED:
+      TEXT:
+        SHOW: true
+        SHOW_UNIT: false
+        X: 50
+        Y: 118
+        FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+        FONT_SIZE: 25
+        FONT_COLOR: 30, 255, 50
+        BACKGROUND_IMAGE: background.png
+    MEMORY_TOTAL:
+      TEXT:
+        SHOW: true
+        SHOW_UNIT: true
+        X: 136
+        Y: 118
+        FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+        FONT_SIZE: 25
+        FONT_COLOR: 30, 255, 50
+        BACKGROUND_IMAGE: background.png
+    TEMPERATURE:
+      TEXT:
+        SHOW: true
+        SHOW_UNIT: true
+        X: 238
+        Y: 118
+        FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+        FONT_SIZE: 25
+        FONT_COLOR: 30, 255, 50
+        BACKGROUND_IMAGE: background.png
+
+  MEMORY:
+    INTERVAL: 3
+    VIRTUAL:
+      GRAPH:
+        SHOW: true
+        X: 3
+        Y: 255
+        WIDTH: 314
+        HEIGHT: 13
+        MIN_VALUE: 0
+        MAX_VALUE: 100
+        BAR_COLOR: 30, 255, 50
+        BAR_OUTLINE: true
+        BACKGROUND_COLOR: 0, 0, 0
+      USED:
+        SHOW: true
+        SHOW_UNIT: false
+        X: 114
+        Y: 224
+        FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+        FONT_SIZE: 25
+        FONT_COLOR: 30, 255, 50
+        BACKGROUND_IMAGE: background.png
+      TOTAL:
+        SHOW: true
+        SHOW_UNIT: true
+        X: 210
+        Y: 224
+        FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+        FONT_SIZE: 25
+        FONT_COLOR: 30, 255, 50
+        BACKGROUND_IMAGE: background.png
+
+  NET:
+    INTERVAL: 1
+    ETH:
+      UPLOAD:
+        TEXT:
+          SHOW: true
+          X: 3
+          Y: 419
+          FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+          FONT_SIZE: 25
+          FONT_COLOR: 30, 255, 50
+          BACKGROUND_IMAGE: background.png
+        LINE_GRAPH:
+          SHOW: true
+          X: 150
+          Y: 380
+          WIDTH: 167
+          HEIGHT: 84
+          MIN_VALUE: -1
+          MAX_VALUE: 100000000000
+          HISTORY_SIZE: 60
+          AUTOSCALE: true
+          LINE_COLOR: 30, 255, 50
+          AXIS: true
+          AXIS_COLOR: 30, 255, 50
+          BACKGROUND_IMAGE: background.png
+      DOWNLOADED:
+        TEXT:
+          SHOW: true
+          X: 17
+          Y: 352
+          FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+          FONT_SIZE: 25
+          FONT_COLOR: 30, 255, 50
+          BACKGROUND_IMAGE: background.png
+      DOWNLOAD:
+        TEXT:
+          SHOW: true
+          X: 3
+          Y: 318
+          FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+          FONT_SIZE: 25
+          FONT_COLOR: 30, 255, 50
+          BACKGROUND_IMAGE: background.png
+        LINE_GRAPH:
+          SHOW: true
+          X: 150
+          Y: 284
+          WIDTH: 167
+          HEIGHT: 84
+          MIN_VALUE: -1
+          MAX_VALUE: 100000000000
+          HISTORY_SIZE: 60
+          AUTOSCALE: true
+          LINE_COLOR: 30, 255, 50
+          AXIS: true
+          AXIS_COLOR: 30, 255, 50
+          BACKGROUND_IMAGE: background.png
+      UPLOADED:
+        TEXT:
+          SHOW: true
+          X: 17
+          Y: 453
+          FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+          FONT_SIZE: 25
+          FONT_COLOR: 30, 255, 50
+          BACKGROUND_IMAGE: background.png
