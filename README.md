@@ -6,10 +6,9 @@
 
 | 步骤 | 命令 |
 | ---- | ---- |
-| ① 下载源码 | `git clone https://github.com/Subdue0/turing-smart-screen-python.git` |
-| ② 进入目录 | `cd turing-smart-screen-python` |
-| ③ 安装依赖（Python≥3.8） | `python3 -m venv .tssp && source .tssp/bin/activate && pip install -r requirements.txt` |
-| ④ 后台运行监控 | `nohup python main.py &` |
+| ① 下载源码 | `git clone https://github.com/Subdue0/turing-smart-screen-python.git && cd turing-smart-screen-python` |
+| ② 安装依赖（Python≥3.8） | `python3 -m venv .tssp && source .tssp/bin/activate && pip install -r requirements.txt` |
+| ③ 后台运行监控 | `nohup python main.py > /dev/null 2>&1 &` |
 
 ## 📺 屏幕预览
 <div align="center">
