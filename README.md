@@ -9,7 +9,7 @@
 | ① 下载源码 | `git clone https://github.com/Subdue0/turing-smart-screen-python.git && cd turing-smart-screen-python` |
 | ② 安装依赖（Python≥3.8） | `python3 -m venv .tssp && source .tssp/bin/activate && pip install -r requirements.txt` |
 | ③ 运行监控 | `python main.py` |
-| ④ 加入开机自启（可选） | `chmod +x ./install-service.sh && ./install-service.sh` |
+| ④ 开机自启（可选） | `chmod +x ./install-service.sh && ./install-service.sh` |
 
 ## 📺 屏幕预览
 <div align="center">
@@ -20,7 +20,7 @@
 
 ## 📋 后续操作
 - 停止进程：`pkill -f "python main.py"`
-- 查看实时日志：`tail -f log.log`
+- 查看实时日志：`tail -f turing.log`
 - 换主题：编辑 `config.yaml` 文件 → 添加主题到 `/res/themes` 中 → 重启进程
 - 换字体：添加主题到 `/res/fonts` 中 → 编辑主题目录下的 `theme.yaml` 文件 → 重启进程
 - 改网卡：运行 `ip a` 找到自己的网卡名（如 `enp2s0` 或 `wlan0`）→ 填进 `config.yaml` 的 `ETH / WLO` 项 → 重启进程

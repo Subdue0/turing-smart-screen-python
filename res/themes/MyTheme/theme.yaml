@@ -206,38 +206,6 @@ STATS:
   NET:
     INTERVAL: 1
     ETH:
-      UPLOAD:
-        TEXT:
-          SHOW: true
-          X: 3
-          Y: 419
-          FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
-          FONT_SIZE: 25
-          FONT_COLOR: 30, 255, 50
-          BACKGROUND_IMAGE: background.png
-        LINE_GRAPH:
-          SHOW: true
-          X: 150
-          Y: 380
-          WIDTH: 167
-          HEIGHT: 84
-          MIN_VALUE: -1
-          MAX_VALUE: 100000000000
-          HISTORY_SIZE: 60
-          AUTOSCALE: true
-          LINE_COLOR: 30, 255, 50
-          AXIS: true
-          AXIS_COLOR: 30, 255, 50
-          BACKGROUND_IMAGE: background.png
-      DOWNLOADED:
-        TEXT:
-          SHOW: true
-          X: 17
-          Y: 352
-          FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
-          FONT_SIZE: 25
-          FONT_COLOR: 30, 255, 50
-          BACKGROUND_IMAGE: background.png
       DOWNLOAD:
         TEXT:
           SHOW: true
@@ -261,10 +229,42 @@ STATS:
           AXIS: true
           AXIS_COLOR: 30, 255, 50
           BACKGROUND_IMAGE: background.png
+      DOWNLOADED:
+        TEXT:
+          SHOW: true
+          X: 3
+          Y: 352
+          FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+          FONT_SIZE: 25
+          FONT_COLOR: 30, 255, 50
+          BACKGROUND_IMAGE: background.png
+      UPLOAD:
+        TEXT:
+          SHOW: true
+          X: 3
+          Y: 419
+          FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
+          FONT_SIZE: 25
+          FONT_COLOR: 30, 255, 50
+          BACKGROUND_IMAGE: background.png
+        LINE_GRAPH:
+          SHOW: true
+          X: 150
+          Y: 380
+          WIDTH: 167
+          HEIGHT: 84
+          MIN_VALUE: -1
+          MAX_VALUE: 100000000000
+          HISTORY_SIZE: 60
+          AUTOSCALE: true
+          LINE_COLOR: 30, 255, 50
+          AXIS: true
+          AXIS_COLOR: 30, 255, 50
+          BACKGROUND_IMAGE: background.png
       UPLOADED:
         TEXT:
           SHOW: true
-          X: 17
+          X: 3
           Y: 453
           FONT: moreperfect-vga/MorePerfectDOSVGA.ttf
           FONT_SIZE: 25

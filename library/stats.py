@@ -95,12 +95,21 @@ def display_themed_value(theme_data, value, min_size=0, unit=''):
     if value is None:
         return
 
-    # overridable MIN_SIZE from theme with backward compatibility
+    # Overridable MIN_SIZE from theme with backward compatibility
     min_size = theme_data.get("MIN_SIZE", min_size)
 
     text = f"{{:>{min_size}}}".format(value)
     if theme_data.get("SHOW_UNIT", True) and unit:
         text += str(unit)
+
+    # Generate a unique key based on screen position to isolate max_len per widget
+    key = f"_max_len_{theme_data['X']}_{theme_data['Y']}"
+    # Retrieve or initialize the max length for this widget
+    max_len = max(len(text), theme_data.get(key, 0))
+    # Store the updated max length back into theme_data for persistence across calls
+    theme_data[key] = max_len
+    # Left-pad with spaces to max_len so every draw overwrites the same pixel width
+    text = f"{text:<{max_len}}"
 
     display.lcd.DisplayText(
         text=text,
