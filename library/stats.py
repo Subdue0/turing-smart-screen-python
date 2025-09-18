@@ -729,8 +729,8 @@ class Net:
     def _show_themed_total_data(theme_data, amount):
         display_themed_value(
             theme_data=theme_data,
-            value=f"{bytes2human(amount)}",
-            min_size=6
+            value=f"{bytes2human(amount, '%(value).1f %(symbol)s')}",
+            min_size=8
         )
 
     @staticmethod
