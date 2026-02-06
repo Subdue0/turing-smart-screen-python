@@ -22,11 +22,11 @@ config:
   HW_SENSORS: AUTO
 
   # Network interfaces
-  # Linux/MacOS interfaces are named "eth0", "wlan0", "wlp1s0", "enp2s0"...
-  # For Windows use the interfaces pretty name: "Ethernet 2", "Wi-Fi", ...
+  # Linux/MacOS interfaces are named "eth0", "wlan0", "enp2s0", "wlp1s0"...
+  # For Windows use the interfaces pretty name: "以太网 2", "WLAN"...
   # Leave the fields empty if the card does not exist on your setup
-  ETH: "enp193s0" # Ethernet Card
-  WLO: "" # Wi-Fi Card
+  ETH: "以太网 2" # Ethernet Card
+  WLO: "WLAN" # Wi-Fi Card
 
   # CPU fan
   # For Linux/MacOS platforms, the CPU fan is amongst all fan sensors gathered from the motherboard chipset
