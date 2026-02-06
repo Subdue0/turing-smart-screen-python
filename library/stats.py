@@ -698,32 +698,27 @@ class Net:
         net_theme_data = config.THEME_DATA['STATS']['NET']
         interval = net_theme_data.get("INTERVAL", None)
         upload_wlo, uploaded_wlo, download_wlo, downloaded_wlo = sensors.Net.stats(WLO_CARD, interval)
-
-        save_last_value(upload_wlo, cls.last_values_wlo_upload,
-                        net_theme_data['WLO']['UPLOAD']['LINE_GRAPH'].get("HISTORY_SIZE", DEFAULT_HISTORY_SIZE))
-        Net._show_themed_tax_rate(net_theme_data['WLO']['UPLOAD']['TEXT'], upload_wlo)
-        Net._show_themed_total_data(net_theme_data['WLO']['UPLOADED']['TEXT'], uploaded_wlo)
-        display_themed_line_graph(net_theme_data['WLO']['UPLOAD']['LINE_GRAPH'], cls.last_values_wlo_upload)
-
-        save_last_value(download_wlo, cls.last_values_wlo_download,
-                        net_theme_data['WLO']['DOWNLOAD']['LINE_GRAPH'].get("HISTORY_SIZE", DEFAULT_HISTORY_SIZE))
-        Net._show_themed_tax_rate(net_theme_data['WLO']['DOWNLOAD']['TEXT'], download_wlo)
-        Net._show_themed_total_data(net_theme_data['WLO']['DOWNLOADED']['TEXT'], downloaded_wlo)
-        display_themed_line_graph(net_theme_data['WLO']['DOWNLOAD']['LINE_GRAPH'], cls.last_values_wlo_download)
-
         upload_eth, uploaded_eth, download_eth, downloaded_eth = sensors.Net.stats(ETH_CARD, interval)
 
-        save_last_value(upload_eth, cls.last_values_eth_upload,
-                        net_theme_data['ETH']['UPLOAD']['LINE_GRAPH'].get("HISTORY_SIZE", DEFAULT_HISTORY_SIZE))
-        Net._show_themed_tax_rate(net_theme_data['ETH']['UPLOAD']['TEXT'], upload_eth)
-        Net._show_themed_total_data(net_theme_data['ETH']['UPLOADED']['TEXT'], uploaded_eth)
-        display_themed_line_graph(net_theme_data['ETH']['UPLOAD']['LINE_GRAPH'], cls.last_values_eth_upload)
+        wlo_active = upload_wlo > 0 or download_wlo > 0
+        eth_active = upload_eth > 0 or download_eth > 0
 
-        save_last_value(download_eth, cls.last_values_eth_download,
-                        net_theme_data['ETH']['DOWNLOAD']['LINE_GRAPH'].get("HISTORY_SIZE", DEFAULT_HISTORY_SIZE))
-        Net._show_themed_tax_rate(net_theme_data['ETH']['DOWNLOAD']['TEXT'], download_eth)
-        Net._show_themed_total_data(net_theme_data['ETH']['DOWNLOADED']['TEXT'], downloaded_eth)
-        display_themed_line_graph(net_theme_data['ETH']['DOWNLOAD']['LINE_GRAPH'], cls.last_values_eth_download)
+        if wlo_active:
+            upload, uploaded, download, downloaded = upload_wlo, uploaded_wlo, download_wlo, downloaded_wlo
+        else:
+            upload, uploaded, download, downloaded = upload_eth, uploaded_eth, download_eth, downloaded_eth
+
+        save_last_value(upload, cls.last_values_upload,
+                        net_theme_data['PERCENTAGE']['UPLOAD']['LINE_GRAPH'].get("HISTORY_SIZE", DEFAULT_HISTORY_SIZE))
+        Net._show_themed_tax_rate(net_theme_data['PERCENTAGE']['UPLOAD']['TEXT'], upload)
+        Net._show_themed_total_data(net_theme_data['PERCENTAGE']['UPLOADED']['TEXT'], uploaded)
+        display_themed_line_graph(net_theme_data['PERCENTAGE']['UPLOAD']['LINE_GRAPH'], cls.last_values_upload)
+
+        save_last_value(download, cls.last_values_download,
+                        net_theme_data['PERCENTAGE']['DOWNLOAD']['LINE_GRAPH'].get("HISTORY_SIZE", DEFAULT_HISTORY_SIZE))
+        Net._show_themed_tax_rate(net_theme_data['PERCENTAGE']['DOWNLOAD']['TEXT'], download)
+        Net._show_themed_total_data(net_theme_data['PERCENTAGE']['DOWNLOADED']['TEXT'], downloaded)
+        display_themed_line_graph(net_theme_data['PERCENTAGE']['DOWNLOAD']['LINE_GRAPH'], cls.last_values_download)
 
     @staticmethod
     def _show_themed_total_data(theme_data, amount):
