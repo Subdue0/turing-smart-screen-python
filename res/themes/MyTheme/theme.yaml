@@ -205,7 +205,7 @@ STATS:
 
   NET:
     INTERVAL: 1
-    ETH:
+    PERCENTAGE:
       DOWNLOAD:
         TEXT:
           SHOW: true
