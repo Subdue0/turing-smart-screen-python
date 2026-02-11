@@ -688,25 +688,24 @@ class Disk:
 
 
 class Net:
-    last_values_wlo_upload = []
-    last_values_wlo_download = []
-    last_values_eth_upload = []
-    last_values_eth_download = []
+    last_values_upload = []
+    last_values_download = []
 
     @classmethod
     def stats(cls):
         net_theme_data = config.THEME_DATA['STATS']['NET']
         interval = net_theme_data.get("INTERVAL", None)
-        upload_wlo, uploaded_wlo, download_wlo, downloaded_wlo = sensors.Net.stats(WLO_CARD, interval)
+
         upload_eth, uploaded_eth, download_eth, downloaded_eth = sensors.Net.stats(ETH_CARD, interval)
+        upload_wlo, uploaded_wlo, download_wlo, downloaded_wlo = sensors.Net.stats(WLO_CARD, interval)
 
-        wlo_active = upload_wlo > 0 or download_wlo > 0
-        eth_active = upload_eth > 0 or download_eth > 0
+        eth_active = upload_eth > 0 or uploaded_eth > 0 or download_eth > 0 or downloaded_eth > 0
+        wlo_active = upload_wlo > 0 or uploaded_wlo > 0 or download_wlo > 0 or downloaded_wlo > 0
 
-        if wlo_active:
-            upload, uploaded, download, downloaded = upload_wlo, uploaded_wlo, download_wlo, downloaded_wlo
-        else:
+        if eth_active:
             upload, uploaded, download, downloaded = upload_eth, uploaded_eth, download_eth, downloaded_eth
+        else:
+            upload, uploaded, download, downloaded = upload_wlo, uploaded_wlo, download_wlo, downloaded_wlo
 
         save_last_value(upload, cls.last_values_upload,
                         net_theme_data['PERCENTAGE']['UPLOAD']['LINE_GRAPH'].get("HISTORY_SIZE", DEFAULT_HISTORY_SIZE))
